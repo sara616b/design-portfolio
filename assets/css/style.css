@@ -12,6 +12,8 @@
   --darkgreen: rgb(54 119 93);
   --dark-color: rgb(34, 66, 53);
   font-family: Arial, Helvetica, sans-serif;
+  --sky-blue: rgb(141, 222, 224);
+  --dark-gray: rgb(49, 49, 49);
 }
 
 .hidden {
@@ -21,13 +23,17 @@
 img {
   width: 100%;
 }
+body {
+  background: linear-gradient(
+    132deg,
+    #bce7eb 0%,
+    rgba(255, 255, 255, 1) 100%
+  ) !important;
+}
 /* HEADER AND NAVIGATION */
 header {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
+  background-color: var(--sky-blue);
 }
-
 #burgermenu {
   font-size: 2rem;
   cursor: pointer;
@@ -39,32 +45,55 @@ header {
 }
 
 #logo {
-  padding: 30px 10px;
+  display: flex;
+  align-content: center;
   transition: opacity 1s, transform 2s;
+  padding: 5px;
+  flex-grow: 1;
+  flex-basis: 40%;
+}
+#logo a {
+  width: 100%;
 }
 nav {
-  background-color: var(--dark-color);
-}
-nav a,
-nav div {
-  color: white;
+  display: flex;
+  padding: 20px 10px;
+  flex-direction: row;
+  justify-content: space-between;
   text-decoration: none;
+}
+nav ul {
+  flex-grow: 2;
+  flex-basis: 60%;
+  align-content: flex-end;
+  text-align: end;
+  padding: 0 10px;
+}
+
+nav ul a {
   padding: 10px;
+  text-decoration: none;
+  color: black;
+  font-family: "Alegreya", serif;
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0.404);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.281);
 }
 
 /* FOOTER */
 footer {
   background-color: var(--dark-color);
   padding: 20px;
+  margin-top: -10px;
+  font-size: 1.5rem;
+  color: white;
+  text-align: center;
 }
 footer nav {
   height: 150px;
   display: flex;
-  flex-direction: column;
-}
-footer nav a {
-  width: 100%;
-  padding: 10px 0;
+  flex-direction: row;
+  justify-content: center;
 }
 #logo:hover {
   opacity: 0.8;
@@ -72,19 +101,25 @@ footer nav a {
 }
 header nav a {
   transition: opacity 1s, transform 1s;
-  padding: 0 20px;
 }
 header nav a:hover {
   opacity: 0.8;
   transform: scale(1.2);
 }
 footer nav a {
-  transition: opacity 1s, transform 1s;
+  padding: 10px;
+  transition: opacity 0.5s, transform 0.5s;
 }
 footer nav a:hover {
   transform-origin: left;
   opacity: 0.8;
-  transform: scale(1.2);
+  transform: translate(0px, -10px);
+}
+/* SOME */
+.some a svg {
+  width: 100px;
+  height: 100px;
+  fill: white;
 }
 
 #logo:hover line {
@@ -95,11 +130,16 @@ footer nav a:hover {
 
 @media only screen and (min-width: 600px) {
   /************BUGERMENU BLIVER NORMAL MENU*****/
-  header div {
+  header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     max-width: 1200px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0);
+  }
+  header div {
+    width: 100%;
   }
   #burgerhidden,
   #burgerhidden.hidden {
@@ -123,5 +163,14 @@ footer nav a:hover {
   #logo a {
     width: 35vw;
     max-width: 400px;
+  }
+  nav ul a {
+    background-color: rgba(255, 255, 255, 0);
+  }
+  nav ul a:last-child {
+    background-color: #ffff6d;
+    border-radius: 30px;
+    border: 10px solid #ffff6d;
+    box-shadow: 0 0 50px white;
   }
 }

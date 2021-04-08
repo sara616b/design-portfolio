@@ -22,63 +22,87 @@
       }
 
       main {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        grid-gap: 20px;
+        display: flex;
+        flex-direction: column;
         margin: 0 auto;
-        padding: 20px;
-        color: white;
+        padding: 0 20px;
+        color: black;
         max-width: 1200px;
       }
-
-      .project {
-        margin: 70px 0 40px 0;
-        padding: 20px;
-        background-color: var(--mediumgreen);
+      main div {
         border-radius: 20px;
-        transition: transform 1s, opacity 1s;
+        padding: 20px 40px;
+        background-color: white;
         z-index: 2;
       }
-      .project:hover {
-        cursor: pointer;
-        opacity: 0.9;
-        transform: scale(1.1);
-      }
-      .project:nth-child(2) {
-        background-color: var(--darkgreen);
-      }
-      h2 {
-        padding-top: 20px;
-        font-size: 2rem;
-        font-weight: bold;
-        line-height: 50px;
-      }
-      h2 label {
-        font-size: 1.2rem;
-        font-weight: normal;
-        opacity: 0.8;
-      }
-      .project p {
-        line-height: 25px;
-        padding-bottom: 20px;
-      }
-      .project .content img,
-      .image {
-        border-radius: 20px;
-        margin-top: -90px;
-        background-size: 100%;
-        height: 200px;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-        border: solid white 20px;
+      h1,
+      p,
+      img {
+        margin: 10px;
+        padding: 10px;
       }
 
       #mountains {
-        z-index: 1;
         margin-top: -200px;
         height: 300px;
         width: 100%;
+        z-index: 1;
+      }
+      .buttons {
+        width: 100%;
+        height: fit-content;
+        text-align: center;
+        text-decoration: none;
+        display: flex;
+        padding: 0;
+        justify-content: center;
+      }
+      .buttons a {
+        word-wrap: break-word;
+        color: inherit;
+        font-weight: bold;
+        width: 50%;
+        line-height: 30px;
+        padding: 30px;
+        text-align: center;
+        background-color: var(--lightgreen);
+        border-radius: 20px;
+        transition: width 1.5s, opacity 1s;
+      }
+      .buttons a:nth-of-type(odd) {
+        background-color: var(--lightteal);
+        margin-right: 20px;
+      }
+
+      .buttons a:hover {
+        width: 110%;
+        opacity: 0.8;
+      }
+      .path {
+        padding-left: 20px;
+        font-weight: lighter;
+        color: var(--dark-gray);
+      }
+
+      @media only screen and (max-width: 800px) {
+        main div {
+          padding: 20px 5px;
+        }
+        p,
+        h1,
+        img {
+          padding-left: 0;
+        }
+        main {
+          padding: 40px 5px 5px 5px;
+        }
+        .buttons a {
+          padding: 5px;
+          text-align: center;
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+        }
       }
     </style>
   </head>
@@ -224,7 +248,7 @@
             <ul>
               <div id="burgermenu">=</div>
               <div id="burgerhidden" class="hidden">
-                <a href="#">Projects</a>
+                <a href="../projects/">Projects</a>
                 <a href="../about/">About</a>
                 <a href="../contact/">Contact</a>
               </div>
@@ -234,46 +258,14 @@
       </div>
     </header>
     <main>
-      <div class="project" id="game-proj">
-        <div class="content">
-          <div
-            class="image"
-            style="
-              background-image: url('../assets/images/stay-inside-game.png');
-            "
-          ></div>
-          <h2><label>GAME:</label> Stay Inside</h2>
-          <p>
-            Designed and developed in the beginning of lockdown this interactive
-            game was inspired by the state of the world.
-          </p>
-        </div>
-      </div>
-      <div class="project" id="fruit-proj">
-        <div class="content">
-          <div
-            class="image"
-            style="background-image: url('../assets/images/frugt.png')"
-          ></div>
-          <h2><label>PROTOTYPE:</label> friskfrugt.dk</h2>
-          <p>
-            Design of a fictional fruit seller website from a school project.
-          </p>
-        </div>
-      </div>
-      <div class="project" id="ihs-proj">
-        <div class="content">
-          <div
-            class="image"
-            style="background-image: url('../assets/images/ihs.png')"
-          ></div>
-          <h2><label>WEB:</label> Idrætshøjskolen</h2>
-          <p>
-            In this school project we collaborated with Idrætshøjskolen
-            Sønderborg to design and develop a site for them. I primarily
-            functioned as the coder, but contributed to each process of this
-            teamwork.
-          </p>
+      <div>
+        <a class="path" href="../projects">ᐸ Projects</a>
+        <h1>PROJECT NAME</h1>
+        <p id="intro-text">Intro text here</p>
+        <img src="" alt="screenshot of project" />
+        <div class="buttons">
+          <a id="web-link" href="#">View live website here</a>
+          <a id="doc-link" href="#">View documentation</a>
         </div>
       </div>
     </main>
@@ -312,9 +304,9 @@
                 <g id="post-linkedin">
                   <path
                     d="M459,0H51C22.95,0,0,22.95,0,51v408c0,28.05,22.95,51,51,51h408c28.05,0,51-22.95,51-51V51C510,22.95,487.05,0,459,0z
-			 M153,433.5H76.5V204H153V433.5z M114.75,160.65c-25.5,0-45.9-20.4-45.9-45.9s20.4-45.9,45.9-45.9s45.9,20.4,45.9,45.9
-			S140.25,160.65,114.75,160.65z M433.5,433.5H357V298.35c0-20.399-17.85-38.25-38.25-38.25s-38.25,17.851-38.25,38.25V433.5H204
-			V204h76.5v30.6c12.75-20.4,40.8-35.7,63.75-35.7c48.45,0,89.25,40.8,89.25,89.25V433.5z"
+               M153,433.5H76.5V204H153V433.5z M114.75,160.65c-25.5,0-45.9-20.4-45.9-45.9s20.4-45.9,45.9-45.9s45.9,20.4,45.9,45.9
+              S140.25,160.65,114.75,160.65z M433.5,433.5H357V298.35c0-20.399-17.85-38.25-38.25-38.25s-38.25,17.851-38.25,38.25V433.5H204
+              V204h76.5v30.6c12.75-20.4,40.8-35.7,63.75-35.7c48.45,0,89.25,40.8,89.25,89.25V433.5z"
                   />
                 </g>
               </g>
@@ -336,8 +328,8 @@
                 <g>
                   <path
                     d="M384,42.667H42.667c-23.573,0-42.453,19.093-42.453,42.667L0,341.333C0,364.907,19.093,384,42.667,384H384
-			c23.573,0,42.667-19.093,42.667-42.667v-256C426.667,61.76,407.573,42.667,384,42.667z M384,128L213.333,234.667L42.667,128
-			V85.333L213.333,192L384,85.333V128z"
+              c23.573,0,42.667-19.093,42.667-42.667v-256C426.667,61.76,407.573,42.667,384,42.667z M384,128L213.333,234.667L42.667,128
+              V85.333L213.333,192L384,85.333V128z"
                   />
                 </g>
               </g>
@@ -364,15 +356,37 @@
     </footer>
     <script>
       window.addEventListener("DOMContentLoaded", start);
+
       function start() {
         console.log("start");
-        document.querySelectorAll(".project").forEach((project) => {
-          project.addEventListener("click", openDetails);
+        const urlParams = new URLSearchParams(window.location.search);
+        const id = urlParams.get("id");
+        let projectsArray = [
+          {
+            id: "game-proj",
+            header: "Stay Inside Game",
+            text: "This is a cool game",
+            imgSrc: "../assets/images/stay-inside-game.png",
+            webLink: "#",
+            docLink: "#",
+          },
+        ];
+
+        // get details to show on page
+        projectsArray.forEach((project) => {
+          if (id == project.id) {
+            showDetails(project);
+          }
         });
       }
-      function openDetails() {
-        console.log("open details");
-        window.location.href = "detail.html?id=" + this.id;
+
+      function showDetails(project) {
+        let main = document.querySelector("main");
+        main.querySelector("h1").textContent = project.header;
+        main.querySelector("#intro-text").textContent = project.text;
+        main.querySelector("img").src = project.imgSrc;
+        main.querySelector("#web-link").href = project.webLink;
+        main.querySelector("#doc-link").href = project.docLink;
       }
     </script>
     <script src="../assets/scripts/script.js"></script>
