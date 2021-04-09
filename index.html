@@ -270,6 +270,10 @@
         }
       }
 
+      .hidetext {
+        display: none;
+        visibility: hidden;
+      }
       @media only screen and (min-width: 600px) {
         .intro .content p {
           font-size: 2.5rem;
@@ -432,9 +436,13 @@
             <ul>
               <div id="burgermenu">=</div>
               <div id="burgerhidden" class="hidden">
-                <a href="projects/">Projects</a>
-                <a href="about/">About</a>
-                <a href="contact/">Contact</a>
+                <a href="projects/" class="english">Projects</a>
+                <a href="about/" class="english">About</a>
+                <a class="sun english" href="contact/">Contact</a>
+                <a href="projects/" class="danish">Projekter</a>
+                <a href="about/" class="danish">Om Mig</a>
+                <a class="sun danish" href="contact/">Kontakt</a>
+                <a id="change-language" data-language="english">Dansk</a>
               </div>
             </ul>
           </nav>
@@ -484,11 +492,20 @@
           />
         </svg>
 
-        <div class="content">
+        <div class="content english">
           <p>Hi! My name is</p>
           <p><strong>Sarah Frederiksen</strong>.</p>
           <p>I tell stories by creating beautiful designs with a standpoint.</p>
           <p id="titles">UX design | Content Creation | Frontend Development</p>
+        </div>
+        <div class="content danish">
+          <p>Hej! Mit navn er</p>
+          <p><strong>Sarah Frederiksen</strong>.</p>
+          <p>
+            Jeg fortæller historier ved at producere smukke designs med en
+            holdning.
+          </p>
+          <p id="titles">UX design | Indholdsproduktion | Frontend Udvikling</p>
         </div>
       </div>
       <div class="project">
@@ -653,11 +670,45 @@
     </footer>
     <script>
       window.addEventListener("DOMContentLoaded", start);
+
       function start() {
         console.log("start");
+        const languageSwitch = document.querySelector("[data-language]");
+        let currentLanguage = languageSwitch.getAttribute("data-language");
+        checkLanguage(currentLanguage);
+        languageSwitch.addEventListener("click", () => {
+          if (currentLanguage === "english") {
+            currentLanguage = "danish";
+            languageSwitch.innerHTML = "English";
+            checkLanguage(currentLanguage);
+          } else if (currentLanguage === "danish") {
+            currentLanguage = "english";
+            languageSwitch.innerHTML = "Dansk";
+            checkLanguage(currentLanguage);
+          }
+        });
         document.querySelectorAll(".project .content").forEach((project) => {
           project.addEventListener("click", openDetails);
         });
+      }
+      function checkLanguage(currentLanguage) {
+        console.log(currentLanguage);
+
+        if (currentLanguage === "english") {
+          document.querySelectorAll(".danish").forEach((text) => {
+            text.classList.add("hidetext");
+          });
+          document.querySelectorAll(".english").forEach((text) => {
+            text.classList.remove("hidetext");
+          });
+        } else if (currentLanguage === "danish") {
+          document.querySelectorAll(".english").forEach((text) => {
+            text.classList.add("hidetext");
+          });
+          document.querySelectorAll(".danish").forEach((text) => {
+            text.classList.remove("hidetext");
+          });
+        }
       }
       function openDetails() {
         console.log("open details");

@@ -98,7 +98,21 @@ nav ul a {
   font-weight: bold;
   border-bottom: 1px solid rgba(0, 0, 0, 0.281);
 }
-
+#logo:hover line {
+  transition: transform 2s;
+  transform: scale(1.02);
+  transform-origin: center;
+}
+nav ul a:last-child {
+  color: var(--dark-color);
+  font-weight: lighter;
+  border: none;
+  cursor: pointer;
+}
+nav ul a:last-child::before {
+  content: "Switch to: ";
+  opacity: 0.5;
+}
 /* FOOTER */
 footer {
   background-color: var(--dark-color);
@@ -123,13 +137,7 @@ footer nav {
   opacity: 0.8;
   transform: scale(1.2);
 }
-header nav a {
-  transition: opacity 1s, transform 1s;
-}
-header nav a:hover {
-  opacity: 0.8;
-  transform: scale(1.2);
-}
+
 footer nav a {
   padding: 10px;
   transition: opacity 0.5s, transform 0.5s;
@@ -146,13 +154,7 @@ footer nav a:hover {
   fill: white;
 }
 
-#logo:hover line {
-  transition: transform 2s;
-  transform: scale(1.02);
-  transform-origin: center;
-}
-
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 700px) {
   /************BUGERMENU BLIVER NORMAL MENU*****/
   header {
     display: flex;
@@ -181,7 +183,7 @@ footer nav a:hover {
     order: 1;
     display: flex !important;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: flex-end;
     height: 100px;
     align-items: center;
   }
@@ -201,14 +203,39 @@ footer nav a:hover {
   }
   nav ul a {
     background-color: rgba(255, 255, 255, 0);
+    margin: 0 10px;
   }
-  nav ul a:last-child {
+  nav ul .sun {
     background-color: #ffff6d;
     border-radius: 30px;
     border: 10px solid #ffff6d;
     box-shadow: 0 0 50px white;
     animation: contact-kf 4s ease-in-out infinite;
   }
+
+  nav ul a:last-child {
+    color: white;
+    background-color: var(--darkgreen);
+    border: none;
+    border-radius: 5px;
+    font-weight: lighter;
+    width: 57px;
+    font-size: 0.8rem;
+    padding: 3px 10px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  nav ul a:last-child::before {
+    font-size: 0.5rem;
+  }
+  header nav a {
+    transition: opacity 1s, transform 1s;
+  }
+  header nav a:hover {
+    opacity: 0.8;
+    transform: scale(1.2);
+  }
+
   @keyframes contact-kf {
     0% {
       transform: scale(1);
