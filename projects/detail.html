@@ -36,10 +36,19 @@
         z-index: 2;
       }
       h1,
+      h2,
       p,
       img {
         margin: 10px;
         padding: 10px;
+      }
+
+      h2 {
+        font-size: 1.2rem;
+        font-weight: normal;
+        opacity: 0.8;
+        margin-bottom: 0;
+        padding-bottom: 0;
       }
 
       #mountains {
@@ -54,7 +63,7 @@
         text-align: center;
         text-decoration: none;
         display: flex;
-        padding: 0;
+        padding: 40px 0 0 0;
         justify-content: center;
       }
       .buttons a {
@@ -90,6 +99,7 @@
         }
         p,
         h1,
+        h2,
         img {
           padding-left: 0;
         }
@@ -259,10 +269,12 @@
     </header>
     <main>
       <div>
-        <a class="path" href="../projects">ᐸ Projects</a>
-        <h1>PROJECT NAME</h1>
+        <a class="path" href="../projects">❮ Projects</a>
+        <h2></h2>
+        <h1>SORRY SOMETHING WENT WRONG</h1>
         <p id="intro-text">Intro text here</p>
         <img src="" alt="screenshot of project" />
+        <p id="extra"></p>
         <div class="buttons">
           <a id="web-link" href="#">View live website here</a>
           <a id="doc-link" href="#">View documentation</a>
@@ -364,12 +376,109 @@
         let projectsArray = [
           {
             id: "game-proj",
+            label: "GAME",
             header: "Stay Inside Game",
-            text: "This is a cool game",
+            text:
+              "Designed and developed in the beginning of lockdown this interactive game was inspired by the state of the world.",
             imgSrc: "../assets/images/stay-inside-game.png",
-            webLink: "#",
-            docLink: "#",
+            webLink: "https://sarahfrederiksen.dk/kea/04_animation/spil/",
+            docLink: "../assets/docs/game-doc.pdf",
+            extra:
+              "For this project I used Illustrator and Adobe Audition. I recorded and edited the soundeffects myself. To get an overview of the game I made an activity diagram and a full State Machine Diagram (view it in the documentation).",
           },
+          {
+            id: "fruit-proj",
+            label: "PROTOTYPE",
+            header: "friskfrugt.dk",
+            text:
+              "Design of a fictional fruit seller website from a school project.",
+            imgSrc: "../assets/images/frugt.png",
+            webLink:
+              "https://xd.adobe.com/view/bc1843a1-d636-4bb2-55b2-9d050f8e8c13-ca29/",
+            docLink: "undefined",
+            extra:
+              "This is a prototype created with Adobe XD. I also tested this prototype with a think-aloud-test.",
+          },
+          {
+            id: "ihs-proj",
+            label: "WEB",
+            header: "Idrætshøjskolen",
+            text:
+              "In this school project we collaborated with Idrætshøjskolen Sønderborg to design and develop a site for them. I primarily functioned as the coder, but contributed to each process of this teamwork.",
+            imgSrc: "../assets/images/ihs.png",
+            webLink: "https://sarahfrederiksen.dk/kea/2_semester/tema9/ihs/",
+            docLink: "undefined",
+            extra:
+              "For this site we used WordPress to store and structure the content. This content we then loaded onto the site with Rest API.",
+          },
+          {
+            id: "shirt-proj",
+            label: "CONFIGURATOR",
+            header: "shirt.it",
+            text:
+              "Design of a shirt configurator made for a school project. During the project there was a focus on animations with CSS and GSAP. My role in the teamwork was getting the right functionality of the configurator with JavaScript and making the animations on the info-page look nice.",
+            imgSrc: "../assets/images/shirt.png",
+            webLink: "http://sarahfrederiksen.dk/kea/frontend/shirt/",
+            docLink: "undefined",
+            extra: "undefined",
+          },
+          {
+            id: "sugar-proj",
+            label: "WEB w GRID",
+            header: "Sugar Rush",
+            text:
+              "With the assignment to create a site for displaying products that interested us, we made a cute sweet site for cakes and all kinds of dessert. WordPress was used to structure the backend.",
+            imgSrc: "../assets/images/sugar.png",
+            webLink:
+              "http://sarahfrederiksen.dk/kea/2_semester/tema9/sugarrush/",
+            docLink: "../assets/docs/sugar-doc.pdf",
+            extra: "undefined",
+          },
+          {
+            id: "gallery-proj",
+            label: "PHOTOSHOP",
+            header: "Gallery",
+            text:
+              "To get more familiar with PhotoShop I took photos and edited so they had a consistent feel. I used tools such as ajustmentlayers and the stamp-tool to remove objects.",
+            imgSrc: "../assets/images/gallery.png",
+            webLink:
+              "https://sarahfrederiksen.dk/kea/05_content/05_02_01b_galleri/",
+            docLink: "undefined",
+            extra: "undefined",
+          },
+          {
+            id: "data-proj",
+            label: "RESEARCH",
+            header: "Data Collecting",
+            text:
+              "Practicing collecting data, in this assignment I was introduced to an array of ways of collecting data.",
+            imgSrc: "../assets/images/data.jpg",
+            webLink: "undefined",
+            docLink: "../assets/docs/data-doc.pdf",
+            extra: "undefined",
+          },
+          {
+            id: "portfolio-proj",
+            label: "WEB",
+            header: "Portfolio 1.sem",
+            text:
+              "On 1. semester of Multimedia Design I designed and developed this portfolio. In some ways it's a preface to the site you're sitting on right now.",
+            imgSrc: "../assets/images/portfolio.png",
+            webLink: "https://sarahfrederiksen.dk/kea/portfolio/index.html",
+            docLink: "undefined",
+            extra: "undefined",
+          },
+          // {
+          //   id: "",
+          //   label: "",
+          //   header: "",
+          //   text:"",
+          //   imgSrc: "../assets/images/",
+          //   webLink: "",
+          //   docLink: "undefined",
+          //   extra:
+          //     "undefined",
+          // },
         ];
 
         // get details to show on page
@@ -383,10 +492,24 @@
       function showDetails(project) {
         let main = document.querySelector("main");
         main.querySelector("h1").textContent = project.header;
+        main.querySelector("h2").textContent = project.label;
         main.querySelector("#intro-text").textContent = project.text;
         main.querySelector("img").src = project.imgSrc;
-        main.querySelector("#web-link").href = project.webLink;
-        main.querySelector("#doc-link").href = project.docLink;
+        if (project.webLink != "undefined") {
+          main.querySelector("#web-link").href = project.webLink;
+        } else {
+          main.querySelector("#web-link").classList.add("hidden");
+        }
+        if (project.docLink != "undefined") {
+          main.querySelector("#doc-link").href = project.docLink;
+        } else {
+          main.querySelector("#doc-link").classList.add("hidden");
+        }
+        if (project.extra != "undefined") {
+          main.querySelector("#extra").textContent = project.extra;
+        } else {
+          main.querySelector("#extra").classList.add("hidden");
+        }
       }
     </script>
     <script src="../assets/scripts/script.js"></script>
