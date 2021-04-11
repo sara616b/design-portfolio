@@ -2,15 +2,15 @@ main {
   display: grid;
   grid-template-columns: repeat(
     auto-fill,
-    minmax(clamp(200px, 100%, 400px), 1fr)
+    minmax(clamp(200px, 100%, 300px), 1fr)
   );
   margin: 0 auto;
   max-width: 1200px;
+  grid-gap: 20px;
+  padding-top: 20px;
 }
 
-.project {
-  margin: 150px 0 0px 0;
-  padding: 20px;
+.artwork {
   background-color: white;
   border-radius: 10px;
   transition: transform 1s, opacity 1s;
@@ -32,35 +32,17 @@ main {
     transform: translate(0, 0);
   }
 }
-.project:hover {
-  cursor: pointer;
-  opacity: 0.9;
-  transform: scale(1.1);
-}
 h2 {
-  padding-top: 20px;
-  font-size: 2rem;
-  font-weight: bold;
-  line-height: 50px;
+  padding: 10px;
+  font-size: 1rem;
+  text-align: center;
 }
-h2 label {
-  font-size: 1.2rem;
-  font-weight: normal;
-  opacity: 0.8;
-}
-.project p {
-  line-height: 30px;
-  padding-bottom: 20px;
-}
-.project .content img,
-.image {
-  border-radius: 10px;
-  margin-top: -160px;
+.artwork .image {
   height: 300px;
+  width: 100%;
+  background-size: contain;
   background-repeat: no-repeat;
-  background-size: cover;
   background-position: center;
-  box-shadow: 1px 1px 10px #0000001c;
 }
 
 #mountains {

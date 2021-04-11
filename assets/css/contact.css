@@ -19,6 +19,7 @@ h2 {
 h2,
 p {
   padding-bottom: 20px;
+  line-height: 30px;
 }
 main div {
   grid-column: 1/3;

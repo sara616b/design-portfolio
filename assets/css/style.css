@@ -107,7 +107,7 @@ nav ul a {
 }
 #logo:hover line {
   transition: transform 2s;
-  transform: scale(1.02);
+  transform: scale(1.001);
   transform-origin: center;
 }
 nav ul a:last-child {
@@ -120,6 +120,33 @@ nav ul a:last-child::before {
   content: "Switch to: ";
   opacity: 0.5;
 }
+
+/* nav content */
+#projects-nav::before {
+  content: "Works";
+}
+#projekter-nav::before {
+  content: "Projekter";
+}
+#art-nav::before {
+  content: "Art";
+}
+#kunst-nav::before {
+  content: "Kunst";
+}
+#about-nav::before {
+  content: "About";
+}
+#om-nav::before {
+  content: "Om Mig";
+}
+#contact-nav::before {
+  content: "Contact";
+}
+#kontakt-nav::before {
+  content: "Kontakt";
+}
+
 /* FOOTER */
 footer {
   background-color: var(--dark-color);
@@ -142,7 +169,7 @@ footer nav {
 }
 #logo:hover {
   opacity: 0.8;
-  transform: scale(1.2);
+  transform: scale(1.02);
 }
 
 footer nav a {
@@ -227,6 +254,10 @@ footer nav a:hover {
     font-weight: lighter;
     animation: contact-kf 4s ease-in-out infinite;
   }
+  nav ul .sun:hover {
+    transform: translate(0, 0);
+    text-decoration: underline solid 1px;
+  }
   nav ul .sun.chosen {
     border: solid rgba(255, 220, 106, 0.63) 2px;
   }
@@ -251,7 +282,7 @@ footer nav a:hover {
   }
   header nav a:hover {
     opacity: 0.8;
-    transform: scale(1.2);
+    transform: translate(0, -10px);
   }
 
   @keyframes contact-kf {

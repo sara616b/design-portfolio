@@ -183,7 +183,7 @@ let projectsArrayDanish = [
     label: "WORDPRESS",
     header: "Idrætshøjskolen",
     text:
-      "I dette skoleprojekt samarbejded vi med Idrætshøjskolen Sønderborg. Vi designede og koded en webside til dem. Min rolle var primært <strong>koder</strong>, men jeg var inde over hele processen i gruppearbejdet.",
+      "I dette skoleprojekt samarbejdede vi med Idrætshøjskolen Sønderborg. Vi designede og koded en webside til dem. Min rolle var primært <strong>koder</strong>, men jeg var inde over hele processen i gruppearbejdet.",
     imgSrc: "../assets/images/ihs.png",
     webLink: "https://sarahfrederiksen.dk/kea/2_semester/tema9/ihs/",
     docLink: "undefined",
@@ -261,10 +261,11 @@ let projectsArrayDanish = [
 
 function start() {
   console.log("start");
-  showProjects();
 
   const urlParams = new URLSearchParams(window.location.search);
+  const id = urlParams.get("id");
   const la = urlParams.get("la");
+  console.log(la);
   const languageSwitch = document.querySelector("[data-language]");
   let currentLanguage;
   if (la === null) {
@@ -294,6 +295,8 @@ function start() {
       checkLanguage(currentLanguage);
     }
   });
+
+  showProjects();
 }
 function checkLanguage(currentLanguage) {
   console.log(currentLanguage);
