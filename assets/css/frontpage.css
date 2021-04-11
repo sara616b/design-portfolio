@@ -11,21 +11,21 @@ main {
   display: flex;
   flex-direction: column;
   margin-bottom: -100px;
-  max-height: 600px;
+  max-height: 450px;
 }
 .intro .content {
   padding: 0 10vw;
   font-size: 1.5rem;
   position: absolute;
   max-width: 1200px;
-  margin: 100px auto 0 auto;
+  margin: 70px auto 0 auto;
   width: 100%;
-  padding-left: 30px;
+  padding-left: 20px;
   align-self: center;
   animation: text-from-bottom 1s ease-in-out 1;
 }
 .intro .content p {
-  font-size: 1rem;
+  font-size: 1.5rem;
   line-height: 30px;
   color: var(--dark-gray);
 }
@@ -40,7 +40,7 @@ main {
 
 .intro #mountains-intro {
   position: relative;
-  top: -100px;
+  top: -98px;
   left: 0;
   min-height: 200px;
   transform-origin: bottom;
@@ -56,7 +56,7 @@ main {
 }
 .intro h1 {
   color: black;
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: normal;
   font-family: "Alegreya", serif;
 }
@@ -244,6 +244,9 @@ h2 label {
 }
 
 @media only screen and (min-width: 600px) {
+  .intro {
+    max-height: 600px;
+  }
   .intro .content p {
     font-size: 2.5rem;
     line-height: 40px;

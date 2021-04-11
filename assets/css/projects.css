@@ -21,6 +21,7 @@ main {
   animation: popupProjects ease 1s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
+  box-shadow: 4px 8px 15px #0000003b;
 }
 
 @keyframes popupProjects {
@@ -38,8 +39,8 @@ main {
   opacity: 0.9;
   transform: scale(1.1);
 }
-.project:nth-child(2) {
-  background-color: var(--darkgreen);
+.project:nth-of-type(even) {
+  background-color: white;
 }
 h2 {
   padding-top: 20px;
