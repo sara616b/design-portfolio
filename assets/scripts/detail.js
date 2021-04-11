@@ -57,7 +57,7 @@ let projectsArray = [
       "In this school project we collaborated with Idrætshøjskolen Sønderborg to design and develop a site for them. I primarily functioned as the coder, but contributed to each process of this teamwork.",
     imgSrc: "../assets/images/ihs.png",
     webLink: "https://sarahfrederiksen.dk/kea/2_semester/tema9/ihs/",
-    docLink: "undefined",
+    docLink: "../assets/docs/ihs-doc.pdf",
     extra:
       "For this site we used WordPress to store and structure the content. This content we then loaded onto the site with Rest API.",
   },
@@ -69,7 +69,7 @@ let projectsArray = [
       "Design of a shirt configurator made for a school project. During the project there was a focus on animations with CSS and GSAP. My role in the teamwork was getting the right functionality of the configurator with JavaScript and making the animations on the info-page look nice.",
     imgSrc: "../assets/images/shirt.png",
     webLink: "http://sarahfrederiksen.dk/kea/frontend/shirt/",
-    docLink: "undefined",
+    docLink: "../assets/docs/shirt-doc.pdf",
     extra: "undefined",
   },
   {
@@ -186,7 +186,8 @@ let projectsArrayDanish = [
       "I dette skoleprojekt samarbejded vi med Idrætshøjskolen Sønderborg. Vi designede og koded en webside til dem. Min rolle var primært <strong>koder</strong>, men jeg var inde over hele processen i gruppearbejdet.",
     imgSrc: "../assets/images/ihs.png",
     webLink: "https://sarahfrederiksen.dk/kea/2_semester/tema9/ihs/",
-    docLink: "undefined",
+
+    docLink: "../assets/docs/ihs-doc.pdf",
     extra:
       "Til denne side brugte vi WordPress til at organisere indholdet. Dette indhold blev derefter hentet ned med rest API.",
   },
@@ -198,7 +199,7 @@ let projectsArrayDanish = [
       "Design af en t-shirt konfigurator. Genne dette projekt var der et fokus på animation med CSS og GSAP. Min rolle i gruppen var primært at få den rette funktionalitet til selve konfiguratoren (fx. tilføje tekst, farve, osv.) og animationerne på info-siden.",
     imgSrc: "../assets/images/shirt.png",
     webLink: "http://sarahfrederiksen.dk/kea/frontend/shirt/",
-    docLink: "undefined",
+    docLink: "../assets/docs/shirt-doc.pdf",
     extra: "undefined",
   },
   {

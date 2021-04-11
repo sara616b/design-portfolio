@@ -182,7 +182,9 @@ footer nav a:hover {
   transform: translate(0px, -10px);
 }
 /* SOME */
-.some a svg {
+.some a svg,
+.some a svg path,
+.some a svg polygon {
   width: 100px;
   height: 100px;
   fill: white;
