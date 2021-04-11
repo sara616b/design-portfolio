@@ -8,7 +8,7 @@ main {
 }
 main div {
   border-radius: 20px;
-  padding: 20px 40px;
+  padding: 20px 20%;
   background-color: white;
   z-index: 2;
 }
