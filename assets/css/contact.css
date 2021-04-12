@@ -44,7 +44,9 @@ main div + div {
 #linkin-icon,
 #linkin-icon svg,
 #github-icon,
-#github-icon svg {
+#github-icon svg,
+#giphy-icon,
+#giphy-icon svg {
   width: 30px;
   height: 30px;
   margin-right: 10px;
