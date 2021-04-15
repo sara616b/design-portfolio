@@ -12,7 +12,6 @@ main {
 
 .artwork {
   background-color: white;
-  border-radius: 10px;
   transition: transform 1s, opacity 1s;
   z-index: 2;
   animation: popupProjects ease 1s;

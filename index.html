@@ -13,8 +13,23 @@
       content="Sarah Isabella Frederiksen, portfolio for multimedia design, content creation, frontend development"
     />
     <meta name="author" content="Sarah Isabella Frederiksen" />
-
-    <title>Sarah Frederiksen</title>
+    <meta
+      name="og:title"
+      content="Portfolio for Sarah Frederiksen | Frontend, multimedia design"
+    />
+    <meta
+      name="og:image"
+      content="https://sarahfrederiksen.dk/assets/images/frontpage.png"
+    />
+    <meta name="og:url" content="https://sarahfrederiksen.dk" />
+    <meta
+      name="og:description"
+      content="Portfolio site for multimedia design student Sarah Isabella Frederiksen. View my work ranging from frontend development, content creation, UX/UI, multimedia design."
+    />
+    <title>
+      Sarah Frederiksen | frontend developer, multimedia designer, UX/UI,
+      digital content creator
+    </title>
     <link
       rel="icon"
       href="assets/images/favicon.svg"
@@ -31,6 +46,11 @@
     <link rel="stylesheet" href="./assets/css/frontpage.css" />
   </head>
   <body>
+    <img
+      style="display: none; visibility: hidden"
+      src="https://sarahfrederiksen.dk/assets/images/frontpage.png"
+      alt="Sarah Frederiksen portfolio"
+    />
     <header>
       <div class="container">
         <div class="container">
@@ -320,7 +340,9 @@
                   href="contact/?la=da"
                   id="kontakt-nav"
                 ></a>
-                <a id="change-language" data-language="english">Dansk</a>
+                <button id="change-language" data-language="english">
+                  Dansk
+                </button>
               </div>
             </ul>
           </nav>
@@ -496,9 +518,9 @@
       </div>
       <div id="button-container">
         <div class="buttons">
-          <a class="english" href="/projects/?la=en">View all my projects</a>
-          <a class="english" href="/about/?la=en">Learn more about me</a>
-          <a class="danish" href="/projects/?la=da">Se all mine projekter</a>
+          <a class="english" href="/projects/?la=en"> View all my projects </a>
+          <a class="english" href="/about/?la=en"> Learn more about me </a>
+          <a class="danish" href="/projects/?la=da"> Se all mine projekter</a>
           <a class="danish" href="/about/?la=da">Læs mere om mig</a>
         </div>
       </div>

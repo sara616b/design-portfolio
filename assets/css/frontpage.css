@@ -175,6 +175,8 @@ h2 label {
   line-height: 30px;
   padding: 30px;
   text-align: center;
+  border: none;
+  cursor: pointer;
   color: white;
   text-shadow: rgba(0, 0, 0, 0.253) 1px 1px 5px;
   background-color: var(--lightgreen);

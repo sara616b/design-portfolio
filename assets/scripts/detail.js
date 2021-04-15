@@ -329,12 +329,12 @@ function showDetails(project) {
   if (project.webLink != "undefined") {
     main.querySelector("#web-link").href = project.webLink;
   } else {
-    main.querySelector("#web-link").classList.add("hidden");
+    main.querySelector("#web-but").classList.add("hidden");
   }
   if (project.docLink != "undefined") {
     main.querySelector("#doc-link").href = project.docLink;
   } else {
-    main.querySelector("#doc-link").classList.add("hidden");
+    main.querySelector("#doc-but").classList.add("hidden");
   }
   if (project.extra != "undefined") {
     main.querySelector("#extra").innerHTML = project.extra;

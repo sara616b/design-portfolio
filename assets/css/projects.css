@@ -12,7 +12,6 @@ main {
   margin: 150px 0 0px 0;
   padding: 20px;
   background-color: white;
-  border-radius: 10px;
   transition: transform 1s, opacity 1s;
   z-index: 2;
   animation: popupProjects ease 1s;
@@ -54,7 +53,6 @@ h2 label {
 }
 .project .content img,
 .image {
-  border-radius: 10px;
   margin-top: -160px;
   height: 300px;
   background-repeat: no-repeat;
