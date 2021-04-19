@@ -334,6 +334,7 @@ function showProjects() {
       clone.querySelector("h2").innerHTML += project.header;
       clone.querySelector("label").innerHTML = project.label + ": ";
       clone.querySelector("p").textContent = project.text;
+      clone.querySelector(".more").innerHTML = "Click to read more!";
       clone.querySelector(".project").addEventListener("click", openDetails);
       document.querySelector("main").appendChild(clone);
     });
@@ -346,6 +347,7 @@ function showProjects() {
       clone.querySelector("h2").innerHTML += project.header;
       clone.querySelector("label").innerHTML = project.label + ": ";
       clone.querySelector("p").textContent = project.text;
+      clone.querySelector(".more").innerHTML = "Klik for at læse mere!";
       clone.querySelector(".project").addEventListener("click", openDetails);
       document.querySelector("main").appendChild(clone);
     });

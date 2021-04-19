@@ -31,10 +31,13 @@ main {
     transform: translate(0, 0);
   }
 }
-.project:hover {
+.project .content {
+  transition: all 0.8s;
+}
+.project .content:hover {
   cursor: pointer;
   opacity: 0.9;
-  transform: scale(1.1);
+  transform: scale(1.02);
 }
 h2 {
   padding-top: 20px;
@@ -49,7 +52,7 @@ h2 label {
 }
 .project p {
   line-height: 30px;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
 }
 .project .content img,
 .image {
@@ -67,7 +70,13 @@ h2 label {
   height: 300px;
   width: 100%;
 }
-
+.more {
+  color: gray;
+  font-size: 0.8rem;
+}
+.more:hover {
+  opacity: 0.8;
+}
 @media only screen and (min-width: 550px) {
   main {
     padding: 20px;

@@ -1,6 +1,7 @@
 "use strict";
 window.addEventListener("DOMContentLoaded", start);
 
+//start when page is loaded
 function start() {
   console.log("start");
   document.querySelectorAll(".project .content").forEach((project) => {

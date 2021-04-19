@@ -66,14 +66,15 @@ h2 {
   margin-right: 20px;
 }
 
-.buttons button:hover {
-  width: 110%;
-  opacity: 0.8;
-}
 .path {
   padding-left: 20px;
   font-weight: lighter;
   color: var(--dark-gray);
+}
+
+.buttons button:hover {
+  width: 110%;
+  opacity: 0.8;
 }
 
 @media only screen and (max-width: 800px) {
@@ -101,5 +102,9 @@ h2 {
     justify-content: center;
     flex-direction: row;
     width: 100%;
+  }
+  .buttons button:hover {
+    width: 100%;
+    opacity: 0.8;
   }
 }
